@@ -29,6 +29,7 @@ console.log(emailLuis)
 let a, b;
 
 [a = 5, b = 3] = [3, 5]
+//Tambien vale [a,b] = [b,a]
 console.log(a)
 console.log(b)
 
@@ -67,6 +68,15 @@ function sumEveryOther(...numero){
     return sumado
 }
 
+/* Tambien se puede hacer con .reduce
+
+function sumEveryOther(...args){
+    const total = args.reduce((acumulado, valorInicial) => {
+        return acumulado + valorInicial
+    }, 0)
+    return total
+}*/
+
 console.log(sumEveryOther(6, 8, 2, 3, 1))
 console.log(sumEveryOther(11, 3, 12))
 
@@ -103,8 +113,7 @@ reciba dos array cómo argumentos y devuelva solo un array
 que combine los dos (usando spread operator).*/
 
 function combineTwoArrays(arr1, arr2){
-    arrayCombinados = [...arr1, ...arr2]
-    return arrayCombinados
+    return [...arr1, ...arr2]
 }
 
 console.log(combineTwoArrays([2,3,4],[2,7,8]))
@@ -122,6 +131,7 @@ function onlyUniques(...numbers){
     }return uniques
 }
 
+//se puede hacer con new Set(numbers)
 
 console.log(onlyUniques("gato", "pollo", "cerdo", "cerdo"))
 console.log(onlyUniques(1, 1, 2, 2, 3, 6, 7, 8))
